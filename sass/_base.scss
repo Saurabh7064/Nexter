@@ -40,5 +40,25 @@ body {
 */
 .container {
     display: grid;
+    /*grid-template-columns : 8rem repeat(8,minmax(mincontent,14rem));
+    it means 1st column(Sidebar) is 8rem and rest 8 are 14rem,14rem is the max and min is content size the column can shrink based on size.eg |Saurabh       |-14rem , |Saurabh|-mincontent
+
+    grid-template-columns : 8rem 1fr repeat(8,minmax(mincontent,14rem)) 1fr;
+    Here we added 2 more columns after first and at the end of 1 fractional unit.
+
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem,1fr) [center-start] repeat(8,
+     [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];
+
+     [sidebar-start][col-end]... are the names of the coloumns which will help us to create the columns of our page
+ */
     grid-template-rows: 80vh min-content 40vh repeat(3, min-content);
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem,1fr) [center-start] repeat(8,
+     [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];
+
+  & > * {
+      padding: 40px;
+      font-size: 3rem;
+  }
 }
+
+
